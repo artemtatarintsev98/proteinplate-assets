@@ -44,12 +44,12 @@ def caption(r, m):
         "\"description\": 2-3 short lines + a line 'Free high-protein grocery list: LINK' + 5 hashtags, "
         "\"tags\": up to 10 short keyword strings}")
     errs = []
-    for model in ("gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"):
+    for model in ("gemini-flash-lite-latest", "gemini-flash-latest"):
         try:
             res = requests.post(
                 f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}",
                 json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json"}},
-                timeout=60)
+                timeout=150)
             if res.status_code != 200:
                 errs.append(f"{model}: {res.status_code} {res.text[:150]}"); continue
             txt = res.json()["candidates"][0]["content"]["parts"][0]["text"]; break
