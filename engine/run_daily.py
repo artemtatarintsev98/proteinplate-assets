@@ -91,7 +91,10 @@ def main():
         entry["youtube"] = yt_upload(out, meta)
     except Exception as e:
         print("YouTube upload failed:", e); entry["youtube_error"] = str(e)[:300]
-    state["posted"].append(entry)
+    if entry.get("youtube"):
+        state["posted"].append(entry)
+    else:
+        state.setdefault("rendered_only", []).append(entry)
     json.dump(state, open(STATE, "w"), indent=1)
     print(json.dumps(entry, indent=1))
 
