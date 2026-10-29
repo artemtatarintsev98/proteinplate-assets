@@ -33,7 +33,8 @@ def caption(r, m):
         "tags": ["high protein", "meal prep", "healthy recipes", "protein recipes", "easy dinner"],
     }
     key = os.environ.get("GEMINI_API_KEY")
-    if not key: return base
+    if not key:
+        base["_note"] = "no GEMINI_API_KEY secret"; return base
     prompt = (
         "Write YouTube Shorts metadata for a high-protein recipe video by the brand Protein Plate. "
         "Audience: busy US women who want to eat more protein. Honest, no medical claims, no fake reviews.\n"
@@ -42,13 +43,21 @@ def caption(r, m):
         "Return ONLY JSON: {\"title\": <=90 chars, curiosity hook, include protein grams, end with #shorts>, "
         "\"description\": 2-3 short lines + a line 'Free high-protein grocery list: LINK' + 5 hashtags, "
         "\"tags\": up to 10 short keyword strings}")
+    errs = []
+    for model in ("gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"):
+        try:
+            res = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}",
+                json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json"}},
+                timeout=60)
+            if res.status_code != 200:
+                errs.append(f"{model}: {res.status_code} {res.text[:150]}"); continue
+            txt = res.json()["candidates"][0]["content"]["parts"][0]["text"]; break
+        except Exception as e:
+            errs.append(f"{model}: {e}")
+    else:
+        base["_note"] = " | ".join(errs)[:500]; return base
     try:
-        res = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}",
-            json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json"}},
-            timeout=60)
-        res.raise_for_status()
-        txt = res.json()["candidates"][0]["content"]["parts"][0]["text"]
         d = json.loads(txt)
         d["description"] = d["description"].replace("LINK", FREE)
         if FREE not in d["description"]: d["description"] += f"\n\nFree high-protein grocery list: {FREE}"
@@ -86,7 +95,7 @@ def main():
     out = os.path.join(REELS, f"{rid}.mp4")
     track = make(rid, pngs, out)
     meta = caption(r, m)
-    entry = {"id": rid, "track": track, "title": meta["title"]}
+    entry = {"id": rid, "track": track, "title": meta["title"], "caption_note": meta.get("_note", "gemini ok")}
     try:
         entry["youtube"] = yt_upload(out, meta)
     except Exception as e:
