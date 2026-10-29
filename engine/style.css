@@ -1,0 +1,117 @@
+@page { size: 8.5in 11in; margin: 0; }
+:root{
+  --cream:#FBF6EE; --ink:#1E2A22; --green:#24452F; --sage:#DDE6D3; --sage2:#EEF2E8;
+  --terra:#D9734E; --sand:#F1E4D1; --muted:#6B746C; --line:#E4DCCF;
+  --bf:#F2B65A; --lu:#7FA36B; --di:#D9734E; --sn:#8E7CC3;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Inter,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:8.5in;height:11in;padding:.7in .75in .8in;position:relative;overflow:hidden;background:var(--cream);page-break-after:always}
+h1,h2,h3{font-family:Lora,serif;font-weight:700;color:var(--green);margin:0}
+h2{font-size:26pt;line-height:1.12;margin:.08in 0 .16in}
+h3{font-size:15pt;margin:.22in 0 .08in}
+h4{font-family:Inter;font-weight:700;font-size:10.5pt;margin:0 0 .05in;color:var(--green)}
+p{margin:0 0 .1in}
+.kicker{font-size:8.5pt;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:700}
+.lead{font-size:12pt;color:#34413A;margin-bottom:.2in}
+.small{font-size:9pt;color:var(--muted)}
+.foot{position:absolute;bottom:.38in;left:.75in;right:.75in;display:flex;justify-content:space-between;font-size:8pt;color:var(--muted);border-top:1px solid var(--line);padding-top:.08in}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.16in;margin:.12in 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.16in .18in}
+.card.big{background:var(--green);color:#fff;border:none}
+.card.big h4{color:#F6D7A7}
+.card ul{margin:.04in 0 0;padding-left:.18in}
+.note{background:var(--sand);border-radius:12px;padding:.14in .18in;font-size:9pt;margin-top:.2in}
+ol.steps{padding-left:.22in}ol.steps li{margin-bottom:.07in}
+/* cover */
+.cover{background:var(--green);color:#fff;padding:.8in}
+.cover-top{font-size:10pt;letter-spacing:.35em;font-weight:700;color:#F6D7A7}
+.cover-mid{margin-top:.75in}
+.cover .kicker{color:#F6D7A7}
+.cover-title{font-size:58pt;line-height:1.02;color:#fff;margin:.15in 0 .3in}
+.cover-title em{color:var(--terra);font-style:italic}
+.cover-sub{font-size:14pt;color:#DDE6D3;max-width:5.5in}
+.cover-stats{position:absolute;left:.8in;right:.8in;bottom:.9in;display:grid;grid-template-columns:repeat(4,1fr);gap:.15in;border-top:1px solid rgba(255,255,255,.25);padding-top:.25in}
+.cover-stats b{display:block;font-family:Lora;font-size:24pt;color:#fff}
+.cover-stats span{font-size:9pt;color:#DDE6D3;text-transform:uppercase;letter-spacing:.08em}
+/* tables */
+table{border-collapse:collapse;width:100%}
+.levels th,.levels td{padding:.1in .12in;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.levels th{font-size:8.5pt;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.levels tr:nth-child(even) td{background:#fff}
+.cheat td{padding:.075in .1in;border-bottom:1px solid var(--line)}
+.cheat .num{text-align:right;font-weight:700;color:var(--terra);white-space:nowrap}
+.week{font-size:8.6pt;margin-top:.1in}
+.week th,.week td{padding:.075in .06in;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.week tr>th:first-child{font-family:Lora;font-size:11pt;color:var(--green);width:.45in}
+.week th.bf,.week th.lu,.week th.di,.week th.sn{font-size:8pt;text-transform:uppercase;letter-spacing:.08em;color:#fff;border-radius:6px 6px 0 0}
+.week th.bf{background:var(--bf)}.week th.lu{background:var(--lu)}.week th.di{background:var(--di)}.week th.sn{background:var(--sn)}
+.week td.num{font-weight:700;text-align:right;white-space:nowrap}
+.week td.num small{font-weight:600;color:var(--terra)}
+.rid{display:inline-block;font-size:7pt;font-weight:700;background:var(--sage);color:var(--green);border-radius:4px;padding:0 4px;margin-right:2px}
+.avg{margin-top:.2in;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.14in .18in}
+/* grocery */
+.gcols{column-count:2;column-gap:.3in;margin-top:.12in}
+.gsec{break-inside:avoid;margin-bottom:.16in}
+.gsec h4{border-bottom:2px solid var(--terra);padding-bottom:.03in;margin-bottom:.06in;text-transform:uppercase;font-size:8.5pt;letter-spacing:.1em}
+.glist{list-style:none;margin:0;padding:0}
+.glist li{display:flex;align-items:flex-start;gap:.07in;font-size:8.8pt;padding:.03in 0;border-bottom:1px dotted var(--line)}
+.gi{flex:1}.gq{color:var(--muted);text-align:right;font-size:8pt;max-width:1.6in}
+.box{display:inline-block;width:10px;height:10px;border:1.5px solid var(--green);border-radius:3px;margin-top:3px;flex:none}
+ul.check{list-style:none;padding:0;margin:.1in 0 .2in}
+ul.check li{display:flex;gap:.1in;padding:.09in 0;border-bottom:1px solid var(--line);font-size:10.5pt}
+ul.check .box{width:13px;height:13px;margin-top:4px}
+/* dividers */
+.divider{display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.divider.bf{background:#E9A443}.divider.lu{background:#5E8A4C}.divider.di{background:#C9623F}.divider.sn{background:#7462B0}
+.divider .kicker{color:#fff;opacity:.85}
+.div-title{font-size:64pt;color:#fff;margin:.1in 0}
+.divider p{font-size:13pt;opacity:.9}
+/* recipes */
+.recipes{display:flex;flex-direction:column;padding-top:.5in;padding-bottom:.75in}
+.recipe{background:#fff;border:1px solid var(--line);border-radius:16px;padding:.2in .24in;flex:1;display:flex;flex-direction:column}
+.rhead{display:flex;justify-content:space-between;align-items:center}
+.tag{font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff;padding:2px 8px;border-radius:20px}
+.tag.bf{background:var(--bf)}.tag.lu{background:var(--lu)}.tag.di{background:var(--di)}.tag.sn{background:var(--sn)}
+.time{font-size:8.5pt;font-weight:600;color:var(--muted)}
+.recipe h3{margin:.06in 0 .06in;font-size:16pt}
+.macros{display:flex;gap:.06in;flex-wrap:wrap}
+.pill{font-size:8pt;background:var(--sage2);border-radius:20px;padding:2px 9px;color:var(--green)}
+.pill b{font-size:9.5pt;margin-right:1px}
+.pill.p{background:var(--terra);color:#fff}
+.pill.k{background:var(--green);color:#fff}
+.serves{font-size:8.5pt;color:var(--muted);margin:.08in 0 .06in}
+.rbody{display:grid;grid-template-columns:2.6in 1fr;gap:.22in;flex:1}
+.ings{list-style:none;padding:0;margin:0;font-size:9pt}
+.ings li{display:flex;justify-content:space-between;gap:.1in;padding:.035in 0;border-bottom:1px dotted var(--line)}
+.amt{color:var(--terra);font-weight:600;white-space:nowrap;font-size:8.5pt}
+.rsteps{margin:0;padding-left:.2in;font-size:9.3pt}
+.rsteps li{margin-bottom:.06in}
+.swap{font-size:8.5pt;color:var(--muted);margin:.08in 0 0;padding-top:.06in;border-top:1px solid var(--line)}
+.tip{font-size:8.5pt;color:var(--green);margin:.03in 0 0}
+/* tracker */
+.tracker th,.tracker td{border:1px solid var(--line);height:.62in;text-align:center;background:#fff}
+.tracker tr:first-child th{height:.6in;background:var(--green);color:#fff;font-size:8.5pt;font-weight:700}
+.tracker th small{font-weight:400;opacity:.8}
+.tracker tr>th:first-child{background:var(--sage2);color:var(--green);font-family:Lora;width:.6in}
+.lines p{color:var(--muted)}
+.endpage{background:var(--green);color:#fff;display:flex;align-items:center}
+.endpage h2{color:#fff}.endpage .lead{color:#DDE6D3}.endpage .kicker{color:#F6D7A7}.endpage .small{color:#B9C7B3;margin-top:.4in}
+
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.14in;margin-top:.25in}
+.grid3 .card p{font-size:9.3pt}
+.rimg{height:1.45in;margin:.08in -.24in .06in;background-size:cover;background-position:center}
+.recipe:not(:has(.rimg)){flex:0 0 auto}
+
+.recipe{padding:.16in .22in}.recipe h3{font-size:14.5pt}.ings li{padding:.025in 0}.rsteps li{margin-bottom:.04in}
+
+.recipes .recipe{flex:1;padding:.22in .3in}
+.recipes .rimg{height:3.6in;margin:.1in -.3in .14in;border-radius:0}
+.recipes .recipe h3{font-size:20pt;margin:.04in 0 .1in}
+.recipes .rbody{grid-template-columns:2.8in 1fr;gap:.3in;margin-top:.04in}
+.recipes .ings{font-size:9.6pt}.recipes .rsteps{font-size:10pt}
+.recipes .ings li{padding:.045in 0}.recipes .rsteps li{margin-bottom:.08in}
+.recipes .swap{margin-top:auto}
+
+.cover-photos{position:absolute;left:.8in;right:.8in;bottom:2.05in;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.12in;height:2.1in}.cover-photos div{background-size:cover;background-position:center;border-radius:12px}
