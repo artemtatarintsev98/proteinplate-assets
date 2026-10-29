@@ -12,6 +12,13 @@
    "title": "Chocolate Peanut Butter Yogurt Bowl \u2014 29g protein #shorts",
    "caption_note": "gemini-flash-latest: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=60) | gemini-2.5-flash: 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use | gemini-2.0-flash: 404 {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemin",
    "youtube": "pyiXbPzWTqI"
+  },
+  {
+   "id": "B1",
+   "track": "lnplusmusic-cooking-cooking-music-607827.mp3",
+   "title": "Want 26g protein with zero morning effort? Berry overnight oats #shorts",
+   "caption_note": "gemini ok",
+   "youtube": "b8Nda6iEiOE"
   }
  ]
 }
