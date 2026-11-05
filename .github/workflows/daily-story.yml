@@ -1,7 +1,7 @@
 name: Daily story
 on:
   schedule:
-    - cron: "47 10 * * *"   # 11:47 Zagreb (winter); posted by the 12:33 Chrome task
+    - cron: "17 4 * * *"   # 05:17 Zagreb; GitHub cron can lag hours, so render early. Posted by the 12:33 Chrome task
   workflow_dispatch:
 permissions:
   contents: write
