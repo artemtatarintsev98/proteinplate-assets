@@ -1,8 +1,8 @@
 """Generate missing food photos img/<id>.jpg for extra recipes via Gemini image model (runs in GitHub Actions)."""
-import os, sys, base64, io, time, requests
+import os, sys, base64, io, time, random, requests, urllib.parse
 from PIL import Image
 import extra
-KEY = os.environ["GEMINI_API_KEY"]; API = "https://generativelanguage.googleapis.com/v1beta"
+KEY = os.environ.get("GEMINI_API_KEY", ""); API = "https://generativelanguage.googleapis.com/v1beta"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def image_models():
@@ -26,10 +26,19 @@ def gen(model, prompt):
         if d: return base64.b64decode(d["data"])
     raise RuntimeError("no image in response")
 
+def pollinations(prompt):
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt) +
+           f"?width=1400&height=788&model=flux&nologo=true&seed={random.randint(1, 99999)}")
+    for i in range(4):
+        r = requests.get(url, timeout=240)
+        if r.status_code == 200 and r.headers.get("content-type", "").startswith("image"): return r.content
+        print("pollinations", r.status_code, r.text[:150]); time.sleep(20)
+    raise RuntimeError("pollinations failed")
+
 def main():
     only = sys.argv[1:]
-    models = image_models()
-    if not models: sys.exit("No image model available for this key")
+    models = image_models() if os.environ.get("USE_GEMINI") else []
+    models.append("pollinations")
     made = fail = 0
     for r in extra.XR:
         if only and r["id"] not in only: continue
@@ -37,7 +46,7 @@ def main():
         if os.path.exists(out): continue
         for model in models:
             try:
-                raw = gen(model, extra.photo_prompt(r))
+                raw = pollinations(extra.photo_prompt(r)) if model == "pollinations" else gen(model, extra.photo_prompt(r))
                 im = Image.open(io.BytesIO(raw)).convert("RGB")
                 w, h = im.size; th = int(w * 781 / 1400)
                 if h > th: im = im.crop((0, (h - th) // 2, w, (h - th) // 2 + th))
@@ -47,7 +56,7 @@ def main():
                 print("FAIL", r["id"], model, e)
         else:
             fail += 1
-        time.sleep(7)
+        time.sleep(16)
     print(f"made={made} failed={fail}")
 
 if __name__ == "__main__":
