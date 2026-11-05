@@ -2,7 +2,7 @@ name: Fetch music
 on:
   workflow_dispatch:
   push:
-    paths: ["engine/fetch_music.py"]
+    paths: ["engine/fetch_music.py", "engine/music_urls.txt"]
 permissions:
   contents: write
 jobs:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q requests
-      - run: python engine/fetch_music.py 24
+      - run: python engine/fetch_music.py
       - run: |
           git config user.name "protein-plate-bot"
           git config user.email "bot@users.noreply.github.com"
