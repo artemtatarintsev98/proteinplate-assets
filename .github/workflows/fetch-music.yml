@@ -1,0 +1,21 @@
+name: Fetch music
+on:
+  workflow_dispatch:
+  push:
+    paths: ["engine/fetch_music.py"]
+permissions:
+  contents: write
+jobs:
+  music:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests
+      - run: python engine/fetch_music.py 24
+      - run: |
+          git config user.name "protein-plate-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add engine/music/
+          git commit -m "More music" || echo "nothing to commit"
+          git pull --rebase -q && git push
