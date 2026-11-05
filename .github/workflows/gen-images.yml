@@ -6,7 +6,7 @@ on:
         description: "Recipe ids (space separated, optional)"
         required: false
   push:
-    paths: ["engine/extra.py", ".github/workflows/gen-images.yml"]
+    paths: [".github/workflows/gen-images.yml"]
 permissions:
   contents: write
 jobs:
