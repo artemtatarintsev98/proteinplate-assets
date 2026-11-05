@@ -1,0 +1,32 @@
+name: Generate food images
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Recipe ids (space separated, optional)"
+        required: false
+  push:
+    paths: ["engine/extra.py", ".github/workflows/gen-images.yml"]
+permissions:
+  contents: write
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests pillow
+      - name: Generate
+        working-directory: engine
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python gen_images.py ${{ github.event.inputs.ids }}
+      - name: Commit
+        run: |
+          git config user.name "protein-plate-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add engine/img/
+          git commit -m "New food images" || echo "nothing to commit"
+          git pull --rebase -q && git push
