@@ -3,6 +3,11 @@ from data import R
 from build import M, amount, nice
 E=html.escape
 RID={r["id"]:r for r in R}
+import extra, build
+RID.update({r["id"]:r for r in extra.XR}); M.update(extra.XM)
+build.COUNT.update({"corn tortilla":("corn tortilla",25),"whole wheat pita":("pita",64)})
+build.SPOON.update({"maple syrup":("tsp",7),"tahini":("tbsp",15),"nutritional yeast":("tbsp",5),"hemp seeds":("tbsp",10),
+ "pumpkin seeds":("tbsp",9),"pea protein powder (vanilla)":("scoop",30)})
 HOOK={"Breakfast":"breakfast","Lunch":"meal-prep lunch","Dinner":"dinner","Snack":"snack"}
 css="""@font-face{font-family:Lora;src:url(fonts/Lora-Variable.ttf);font-weight:100 900}
 @font-face{font-family:Lora;font-style:italic;src:url(fonts/Lora-Italic-Variable.ttf);font-weight:100 900}

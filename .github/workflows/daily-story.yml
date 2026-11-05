@@ -1,0 +1,35 @@
+name: Daily story
+on:
+  schedule:
+    - cron: "47 10 * * *"   # 11:47 Zagreb (winter); posted by the 12:33 Chrome task
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q playwright requests
+          python -m playwright install --with-deps chromium > /dev/null
+      - name: Render and publish
+        working-directory: engine
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python story.py
+      - name: Save
+        run: |
+          git config user.name "protein-plate-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add engine/story_state.json stories/
+          git commit -m "Daily story $(date -u +%F)" || echo "nothing to commit"
+          git pull --rebase -q && git push

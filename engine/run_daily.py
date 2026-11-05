@@ -3,8 +3,8 @@ Runs in GitHub Actions. Secrets (env): GEMINI_API_KEY, YT_CLIENT_ID, YT_CLIENT_S
 No Claude involved. Missing secrets -> that step is skipped, the video is still rendered and saved to ../reels/."""
 import os, json, sys, re, requests
 from data import R
-from build import M
-from reel import render
+from reel import render, M
+import extra
 from mkreel import make
 
 FREE = "https://proteinplatehq.gumroad.com/l/free-grocery-list"
@@ -16,8 +16,12 @@ def load_state():
     try: return json.load(open(STATE))
     except Exception: return {"posted": []}
 
+ALL = R + extra.XR
 def next_recipe(state):
-    ids = [r["id"] for r in R]
+    # interleave originals and new recipes; only those with a photo
+    a, b = [r["id"] for r in R], [r["id"] for r in extra.XR]
+    mix = [x for pair in zip(a, b) for x in pair] + a[len(b):] + b[len(a):]
+    ids = [i for i in mix if os.path.exists(os.path.join(ROOT, "img", f"{i}.jpg"))]
     done = [p["id"] for p in state["posted"]]
     for rid in ids:
         if rid not in done: return rid
@@ -90,7 +94,7 @@ def main():
     os.chdir(ROOT); os.makedirs(REELS, exist_ok=True)
     state = load_state()
     rid = sys.argv[1] if len(sys.argv) > 1 else next_recipe(state)
-    r = next(x for x in R if x["id"] == rid); m = M[rid]
+    r = next(x for x in ALL if x["id"] == rid); m = M[rid]
     pngs = render(rid)
     out = os.path.join(REELS, f"{rid}.mp4")
     track = make(rid, pngs, out)
