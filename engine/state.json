@@ -61,6 +61,13 @@
    "title": "Tastes like dessert, hits 26g protein: Apple Pie Oats #shorts",
    "caption_note": "gemini ok",
    "youtube": "IrqX6W6AYBE"
+  },
+  {
+   "id": "X1",
+   "track": "pixabay-lofi-a5f2abd4d3.mp3",
+   "title": "Want 33g protein before 9 AM? Try these Cottage Cheese Egg Bites #shorts",
+   "caption_note": "gemini ok",
+   "youtube_error": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
   }
  ]
 }
