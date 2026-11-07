@@ -75,6 +75,13 @@
    "title": "Want 32g of protein in 12 minutes? Try this easy French toast! #shorts",
    "caption_note": "gemini ok",
    "youtube_error": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
+  },
+  {
+   "id": "X3",
+   "track": "pixabay-indie-25cfadb82a.mp3",
+   "title": "Need 28g of protein in 20 minutes? This potato & turkey sausage hash is a game changer #shorts",
+   "caption_note": "gemini ok",
+   "youtube_error": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
   }
  ]
 }
