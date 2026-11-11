@@ -1,0 +1,425 @@
+{
+ "note": "Posts 1..N in order. Brain schedules unused ones, marks used in threads_bank_used.json.",
+ "posts": [
+  {
+   "n": 1,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "D2",
+   "text": "15-minute shrimp stir-fry. 43g protein.\n\nFaster than delivery, and nobody at the table asks \"is this healthy?\"\n\nFull recipe below 👇"
+  },
+  {
+   "n": 2,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "Moms, honest question: what's the dinner you make when you're completely out of energy?"
+  },
+  {
+   "n": 3,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "How I hit ~120g protein without a single shake:\n\nBreakfast: 3 eggs + Greek yogurt → ~35g\nLunch: chicken wrap → ~36g\nSnack: cottage cheese → ~24g\nDinner: salmon or turkey → ~35g\n\nThat's it. Real food, 4 meals."
+  },
+  {
+   "n": 4,
+   "slot": "B",
+   "type": "story",
+   "recipe_id": null,
+   "text": "For years I ate badly and felt bad all the time.\n\nMy weight kept swinging. Too much, then too little, then too much again.\n\nWhat fixed it wasn't a diet. It was a simple plan: real food, protein in every meal.\n\nAnyone else been on that rollercoaster?"
+  },
+  {
+   "n": 5,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "If you're on a GLP-1 and barely hungry, every bite has to count.\n\nSmall portions that still pack protein:\n• 1 cup Greek yogurt ≈ 20g\n• 2 eggs + cottage cheese ≈ 25g\n• Tuna on 2 rice cakes ≈ 22g\n\n(Food ideas only — your doctor sets your targets.)"
+  },
+  {
+   "n": 6,
+   "slot": "B",
+   "type": "soft",
+   "recipe_id": null,
+   "text": "I put everything I buy for a ~120g protein week on one page.\n\nIt's free → proteinplatehq.gumroad.com/l/free-grocery-list"
+  },
+  {
+   "n": 7,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X13",
+   "text": "Creamy Tuscan chicken. 51g protein per plate.\n\nTastes like a restaurant, made in one pan on a Tuesday.\n\nRecipe below 👇"
+  },
+  {
+   "n": 8,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "What's harder for you?\n\nA) Breakfast\nB) Lunch at work\nC) Dinner for the family\nD) Not snacking at night"
+  },
+  {
+   "n": 9,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Cheap protein that's always in my kitchen:\n\n• Eggs\n• Cottage cheese\n• Greek yogurt\n• Canned tuna\n• Frozen shrimp\n• Lentils & black beans\n• Chicken thighs\n\nNone of it is fancy. All of it works."
+  },
+  {
+   "n": 10,
+   "slot": "B",
+   "type": "story",
+   "recipe_id": null,
+   "text": "I didn't need more willpower. I needed to stop deciding what to eat 5 times a day.\n\nOnce I had a plan, the rest got easy."
+  },
+  {
+   "n": 11,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "On Ozempic/Wegovy/Mounjaro and can only eat a few bites?\n\nEat the protein first, then the rest. That's the whole trick most people share.\n\nWhat's your go-to small meal?"
+  },
+  {
+   "n": 12,
+   "slot": "B",
+   "type": "soft",
+   "recipe_id": null,
+   "text": "Want my high-protein grocery list? Real food, no shakes, 3 sample days.\n\nFree here: proteinplatehq.gumroad.com/l/free-grocery-list"
+  },
+  {
+   "n": 13,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X1",
+   "text": "Breakfast that keeps you full until lunch: cottage cheese egg bites. 33g protein.\n\nMake a batch Sunday, grab two every morning.\n\nRecipe 👇"
+  },
+  {
+   "n": 14,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "Hot take: most \"healthy\" breakfasts are just dessert with good marketing.\n\nAgree or disagree?"
+  },
+  {
+   "n": 15,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Easiest swap I ever made: sour cream → plain Greek yogurt.\n\nSame creaminess on tacos and potatoes. About 3x the protein."
+  },
+  {
+   "n": 16,
+   "slot": "B",
+   "type": "story",
+   "recipe_id": null,
+   "text": "I used to think eating healthy meant eating less.\n\nTurns out I was just eating the wrong things. More protein, real food, and I stopped feeling hungry and tired all day."
+  },
+  {
+   "n": 17,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": "X20",
+   "text": "GLP-1 friendly snack: cottage cheese pizza bowl.\n\nTiny portion, ~25g protein, 5 minutes in the microwave.\n\nRecipe 👇"
+  },
+  {
+   "n": 18,
+   "slot": "B",
+   "type": "soft",
+   "recipe_id": null,
+   "text": "Every week people ask what to actually buy. So I made a free list.\n\nproteinplatehq.gumroad.com/l/free-grocery-list"
+  },
+  {
+   "n": 19,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "D15",
+   "text": "Turkey smash tacos. 42g protein, 15 minutes.\n\nKids think it's taco night. You know it's a high-protein dinner.\n\nRecipe 👇"
+  },
+  {
+   "n": 20,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "Cottage cheese: love it, hate it, or only when it's blended into something?"
+  },
+  {
+   "n": 21,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "1 cup of cottage cheese ≈ 24g protein.\n1 cup of Greek yogurt ≈ 20g.\n1 can of tuna ≈ 25g.\n\nSome days hitting your protein is just knowing these three numbers."
+  },
+  {
+   "n": 22,
+   "slot": "B",
+   "type": "story",
+   "recipe_id": null,
+   "text": "The day I stopped starting over every Monday was the day I wrote my meals down for the week.\n\nBoring? Yes. Works? Also yes."
+  },
+  {
+   "n": 23,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": "S7",
+   "text": "Small-appetite days: protein pudding.\n\nEasy to eat, ~19g protein, takes 3 minutes. Recipe 👇"
+  },
+  {
+   "n": 24,
+   "slot": "B",
+   "type": "soft",
+   "recipe_id": null,
+   "text": "I turned my plan into 30 days of simple high-protein meals with shopping lists for each week.\n\nIt's on my profile if you want it done for you."
+  },
+  {
+   "n": 25,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X18",
+   "text": "Egg fried cauliflower rice. 47g protein, 15 minutes, one pan.\n\nRecipe below 👇"
+  },
+  {
+   "n": 26,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "What's one food you started eating more of and actually felt the difference?"
+  },
+  {
+   "n": 27,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "If you're always hungry at 4pm, look at your lunch.\n\nSalad with no protein = snack attack in 2 hours.\nSame salad + chicken or chickpeas = full until dinner."
+  },
+  {
+   "n": 28,
+   "slot": "B",
+   "type": "story",
+   "recipe_id": null,
+   "text": "My weight going up and down for years taught me one thing: anything too strict doesn't last.\n\nSimple meals I actually like, protein first. That's what stuck."
+  },
+  {
+   "n": 29,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "People on GLP-1s keep asking me the same thing: \"how do I get protein when I'm never hungry?\"\n\nDrinkable and soft foods help: Greek yogurt, cottage cheese, eggs, soups with beans or chicken.\n\nAlways check targets with your doctor."
+  },
+  {
+   "n": 30,
+   "slot": "B",
+   "type": "soft",
+   "recipe_id": null,
+   "text": "Sunday reset: grab the free high-protein grocery list and plan your week in 10 minutes.\n\nproteinplatehq.gumroad.com/l/free-grocery-list"
+  },
+  {
+   "n": 31,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "B1",
+   "text": "Overnight oats that actually have protein in them. 26g.\n\n5 minutes tonight = breakfast done tomorrow.\n\nRecipe 👇"
+  },
+  {
+   "n": 32,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "Be honest: how many times this year have you started a diet on a Monday?"
+  },
+  {
+   "n": 33,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Meal prep doesn't need 5 hours on Sunday.\n\nWhat I actually do:\n1 tray of chicken in the oven\n1 pot of rice\n1 bag of frozen veg\n\n40 minutes. 4 lunches."
+  },
+  {
+   "n": 34,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "If someone gave you a week of dinners already planned, what would you still need to make it actually happen?"
+  },
+  {
+   "n": 35,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "Food noise gone, appetite gone… and suddenly cooking feels pointless.\n\nAnyone else on a GLP-1 struggling to eat ENOUGH, not too much?"
+  },
+  {
+   "n": 36,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "What's the one meal your whole family agrees on? I'll turn the most popular answers into high-protein versions."
+  },
+  {
+   "n": 37,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X12",
+   "text": "Steak burrito bowl. 45g protein.\n\nBuild-your-own bowls = everyone eats the same dinner, nobody complains.\n\nRecipe 👇"
+  },
+  {
+   "n": 38,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "Do you count protein, calories, or nothing at all?"
+  },
+  {
+   "n": 39,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Protein at breakfast changed my whole day more than anything else.\n\nToast alone → hungry by 10.\nToast + 2 eggs + cottage cheese → fine until lunch."
+  },
+  {
+   "n": 40,
+   "slot": "B",
+   "type": "convo",
+   "recipe_id": null,
+   "text": "What's your 3pm snack? No judgment, I want real answers."
+  },
+  {
+   "n": 41,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "3 GLP-1 friendly mini-meals I'd make on low-appetite days:\n\n1. Greek yogurt + berries (18g)\n2. 2 eggs + toast (15g)\n3. Tuna rice cakes (22g)\n\nSmall, simple, protein first."
+  },
+  {
+   "n": 42,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "L7",
+   "text": "Lunch in 10 minutes: Mediterranean chicken wraps. 36g protein.\n\nRecipe 👇"
+  },
+  {
+   "n": 43,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Frozen shrimp is the most underrated weeknight dinner.\n\nThaws in 10 minutes under cold water, cooks in 4. ~24g protein per 100g."
+  },
+  {
+   "n": 44,
+   "slot": "A",
+   "type": "glp1",
+   "recipe_id": null,
+   "text": "If you're on a GLP-1, what's the hardest part about food right now?\n\nA) Not hungry at all\nB) Nothing sounds good\nC) Getting enough protein\nD) Cooking for family when I barely eat"
+  },
+  {
+   "n": 45,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "V16",
+   "text": "Vegan and 45g protein? Tofu pad thai, lighter version.\n\nRecipe 👇"
+  },
+  {
+   "n": 46,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Not a fan of meat? Protein still adds up:\n\nTofu (150g) ≈ 26g\nLentils (1 cup) ≈ 18g\nEdamame (1 cup) ≈ 18g\nSoy yogurt (high-protein) ≈ 14g\n\nVegan high-protein is very doable."
+  },
+  {
+   "n": 47,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X15",
+   "text": "Honey garlic salmon bites. 35g protein, 20 minutes.\n\nThe one fish dinner picky eaters ask for again.\n\nRecipe 👇"
+  },
+  {
+   "n": 48,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "The family dinner rule that saved me:\n\nCook ONE protein for everyone. Kids add rice or pasta, I add extra veg.\n\nNo more cooking two dinners."
+  },
+  {
+   "n": 49,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X14",
+   "text": "Chicken parm meal prep. 51g protein per box.\n\n4 lunches, 35 minutes, zero thinking for the rest of the week.\n\nRecipe 👇"
+  },
+  {
+   "n": 50,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Snacks with 15g+ protein that take under 3 minutes:\n\n• Greek yogurt + berries\n• Cottage cheese + apple\n• Tuna on rice cakes\n• 2 boiled eggs + cheese stick"
+  },
+  {
+   "n": 51,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "S1",
+   "text": "Small portion, big protein: Greek yogurt berry cup. 18g protein in a snack you can eat in 2 minutes.\n\nRecipe 👇"
+  },
+  {
+   "n": 52,
+   "slot": "A",
+   "type": "value",
+   "recipe_id": null,
+   "text": "Biggest mistake I made for years: eating \"healthy\" but almost no protein.\n\nSalads, fruit, toast. Then wondering why I was starving and tired all the time."
+  },
+  {
+   "n": 53,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "D10",
+   "text": "Garlic shrimp & spinach pasta. 44g protein, 20 minutes.\n\nPasta night doesn't have to mean a carb coma.\n\nRecipe 👇"
+  },
+  {
+   "n": 54,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X20",
+   "text": "Cottage cheese pizza bowl. 25g protein, 5 minutes, microwave.\n\nYes, it tastes like pizza. Recipe 👇"
+  },
+  {
+   "n": 55,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "D1",
+   "text": "Sheet-pan lemon garlic chicken & potatoes. 42g protein.\n\nOne pan in the oven, 35 minutes, you do nothing.\n\nRecipe 👇"
+  },
+  {
+   "n": 56,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X2",
+   "text": "Protein French toast. 32g protein.\n\nWeekend breakfast that doesn't wreck your whole day.\n\nRecipe 👇"
+  },
+  {
+   "n": 57,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "V12",
+   "text": "Seitan stir-fry. 41g protein, fully vegan, 15 minutes.\n\nRecipe 👇"
+  },
+  {
+   "n": 58,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "S7",
+   "text": "Chocolate protein pudding. 19g protein, 3 minutes.\n\nFor the 9pm \"I need something sweet\" moment.\n\nRecipe 👇"
+  },
+  {
+   "n": 59,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "D13",
+   "text": "One-pan chicken fried rice. 43g protein.\n\nBetter than takeout and you know exactly what's in it.\n\nRecipe 👇"
+  },
+  {
+   "n": 60,
+   "slot": "A",
+   "type": "recipe",
+   "recipe_id": "X8",
+   "text": "Buffalo chicken salad. 40g protein, only 260 calories.\n\nA salad that actually fills you up. Recipe 👇"
+  }
+ ]
+}
