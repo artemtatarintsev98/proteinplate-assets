@@ -74,9 +74,9 @@ add("story", "My weight going up and down for years taught me one thing: anythin
 # --- SOFT SELL (5) ---
 add("soft", f"I put everything I buy for a ~120g protein week on one page.\n\nIt's free → {FREE}")
 add("soft", f"Want my high-protein grocery list? Real food, no shakes, 3 sample days.\n\nFree here: {FREE}")
-add("soft", f"Every week people ask what to actually buy. So I made a free list.\n\n{FREE}")
+add("soft", "Too tired to think about dinner? I put my 7 fastest high-protein dinners in one PDF. 20 minutes each, 40+ g protein, one shopping list.\n\n$7 → proteinplatehq.gumroad.com/l/7-dinners")
 add("soft", "I turned my plan into 30 days of simple high-protein meals with shopping lists for each week.\n\nIt's on my profile if you want it done for you.")
-add("soft", f"Sunday reset: grab the free high-protein grocery list and plan your week in 10 minutes.\n\n{FREE}")
+add("soft", "Sunday plan for a busy week: 7 dinners, 20 minutes each, all high-protein, one grocery run.\n\nIt's a $7 PDF: proteinplatehq.gumroad.com/l/7-dinners")
 
 assert len(P) == 60, len(P)
 # interleave so each day has a mix: slot A = recipe/value/glp1, slot B = convo/story/soft
