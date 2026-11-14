@@ -124,6 +124,13 @@
    "title": "Want 41g of protein in 35 minutes? Try this Greek Chicken Bowl #shorts",
    "caption_note": "gemini ok",
    "youtube_error": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
+  },
+  {
+   "id": "X9",
+   "track": "pixabay-piano-ab337ea43f.mp3",
+   "title": "Tuna Melt Stuffed Peppers \u2014 38g protein #shorts",
+   "caption_note": "gemini-flash-lite-latest: 503 {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a | gemini-flash-latest: 503 {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a",
+   "youtube_error": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
   }
  ]
 }
