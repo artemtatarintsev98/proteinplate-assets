@@ -38,26 +38,47 @@ STYLES = ["dark", "notes", "photo"]
 def gemini(prompt):
     key = os.environ.get("GEMINI_API_KEY")
     if not key: return None
-    for model in ("gemini-flash-latest", "gemini-flash-lite-latest"):
-        try:
-            r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}",
-                json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 1.0}},
-                timeout=150)
-            if r.status_code == 200:
-                return json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
-            print(model, r.status_code, r.text[:200])
-        except Exception as e:
-            print(model, e)
+    import time
+    models = ("gemini-flash-latest", "gemini-2.5-flash", "gemini-flash-lite-latest", "gemini-2.0-flash")
+    for attempt in range(4):          # 503 "high demand" is temporary: retry with backoff
+        for model in models:
+            try:
+                r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}",
+                    json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 1.0}},
+                    timeout=150)
+                if r.status_code == 200:
+                    return json.loads(r.json()["candidates"][0]["content"]["parts"][0]["text"])
+                print(attempt, model, r.status_code, r.text[:120])
+            except Exception as e:
+                print(attempt, model, e)
+        time.sleep([30, 90, 180, 0][attempt])
     return None
 
-FALLBACK = {"slides": ["POV: your weight won't stop going up and down",
-  "For years I ate badly. No system, no plan.", "I felt bad all the time. Heavy. Tired. Not me.",
+CTA = "I turned it into a free grocery list. Link in bio."
+FALLBACKS = [
+ ["POV: your weight won't stop going up and down", "For years I ate badly. No system, no plan.", "I felt bad all the time. Heavy. Tired. Not me.",
   "Too much weight. Then too little. Then too much again.", "Nothing stuck. So I built myself a simple plan.",
-  "Real food. Protein in every meal. That's it.", "Now I feel amazing. And I actually enjoy eating.",
-  "I turned it into a free grocery list. Link in bio."],
- "caption": "I didn't need more willpower. I needed a plan. Free high-protein grocery list → link in bio",
+  "Real food. Protein in every meal. That's it.", "Now I feel amazing. And I actually enjoy eating.", CTA],
+ ["I didn't need more willpower. I needed a plan.", "I ate whatever, whenever. No system at all.", "And I felt it. Every single day.",
+  "My weight swung both ways. Never stable.", "So I stopped guessing and wrote a simple plan.", "Protein in every meal. Real food only.",
+  "Now eating is easy. And I feel great.", CTA],
+ ["Stop starting over every Monday.", "That was me for years.", "Eating badly, feeling bad, promising to fix it next week.",
+  "My weight went up. Then down. Then up again.", "What finally worked was boring: a plan.", "Real food, protein every meal, nothing extreme.",
+  "I feel like myself again.", CTA],
+ ["I used to think eating healthy meant eating less.", "So I ate less. Then ate badly. Then repeated.", "I felt tired and heavy all the time.",
+  "My weight never stayed in one place.", "Turns out I was just eating the wrong things.", "Now: real food, protein in every meal.",
+  "I feel amazing, and it's actually tasty.", CTA],
+ ["The boring plan that fixed how I feel.", "No diet. No shakes. No counting every bite.", "Before: no system, bad food, bad days.",
+  "My weight kept swinging, too much then too little.", "Then I planned my meals around protein.", "Real food. Simple. Every day.",
+  "Now I feel better than I have in years.", CTA],
+]
+FALLBACK_TEXT = {"caption": "I didn't need more willpower. I needed a plan. Free high-protein grocery list → link in bio #highprotein #mealplan #healthyeating #mystory",
  "yt_title": "I didn't need willpower, I needed a plan #shorts",
- "threads": "For years my weight swung up and down and I felt bad all the time.\n\nWhat fixed it wasn't a diet. It was a simple plan: real food, protein in every meal.\n\nNow I feel amazing. Anyone else been on that rollercoaster?"}
+ "threads": "For years my weight swung up and down and I felt bad all the time.\n\nWhat fixed it wasn't a diet. It was a simple plan: real food, protein in every meal.\n\nAnyone else been on that rollercoaster?"}
+
+def fallback(recent):
+    fresh = [f for f in FALLBACKS if f[0] not in recent] or FALLBACKS
+    return {"slides": random.choice(fresh), **FALLBACK_TEXT}
 
 def write(angle, recent):
     p = ("You write a short story carousel for TikTok/Instagram for the brand Protein Plate, told in first person by its founder.\n"
@@ -70,9 +91,9 @@ def write(angle, recent):
          "Return ONLY JSON: {\"slides\": [strings], \"caption\": TikTok/IG caption, 1-2 lines + 'Free high-protein grocery list → link in bio' + 4 hashtags, "
          "\"yt_title\": <=90 chars ending with #shorts, \"threads\": the same story as a Threads text post <=450 chars ending with a question to get replies}")
     d = gemini(p)
-    if not d or not isinstance(d.get("slides"), list) or len(d["slides"]) < 5: return FALLBACK
+    if not d or not isinstance(d.get("slides"), list) or len(d["slides"]) < 5: return fallback(recent)
     d["slides"] = [str(s).strip() for s in d["slides"]][:8]
-    for k in ("caption", "yt_title", "threads"): d.setdefault(k, FALLBACK[k])
+    for k in ("caption", "yt_title", "threads"): d.setdefault(k, FALLBACK_TEXT[k])
     return d
 
 CSS = """@font-face{font-family:Lora;src:url(fonts/Lora-Variable.ttf);font-weight:100 900}
